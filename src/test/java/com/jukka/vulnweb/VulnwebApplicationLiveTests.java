@@ -31,31 +31,6 @@ import io.restassured.response.Response;
 class VulnwebApplicationLiveTests
 {
     private static final String API_ROOT = "http://localhost:8080/api/users";
-
-//    //@LocalServerPort
-//    @Value("${server.port}")
-//    int port;
-//
-//    @Before
-//    public void setUp()
-//    {
-//        RestAssured.port = port;
-//    }
-    
-//    @Test
-//    void checkActuator() throws Exception
-//    {
-//        final String url = API_ROOT + "/actuator/health";
-//        @SuppressWarnings("rawtypes")
-//        ResponseEntity<Map> re = new RestTemplate().getForEntity(url, Map.class);
-//        System.out.println(re);
-//        assertEquals(HttpStatus.OK, re.getStatusCode());
-//        re.getStatusCode();
-//    }
-    
-//    @Test
-//	void contextLoads()
-//	{}
     
     @Test
     public void whenGetAllUsers_thenOK()
