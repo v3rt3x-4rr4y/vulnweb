@@ -10,6 +10,7 @@
 	</parent>
 	<groupId>com.jukka</groupId>
 	<artifactId>vulnweb</artifactId>
+	<packaging>jar</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>vulnweb</name>
 	<description>Demo project for Spring Boot</description>
@@ -54,7 +55,11 @@
             <artifactId>rest-assured</artifactId>
             <scope>test</scope>
 		</dependency>
-		
+		<dependency>
+  			<groupId>junit</groupId>
+  			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 	
 	<build>
