@@ -2,6 +2,7 @@ package com.jukka.vulnweb.web;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -23,7 +24,7 @@ import com.jukka.vulnweb.web.exception.UserNotFoundException;
 @RequestMapping("/api/users")
 public class UserController
 {
-    @Autowired
+	@Autowired
     private UserRepository userRepository;
 
     @GetMapping
@@ -32,6 +33,12 @@ public class UserController
         return userRepository.findAll();
     }
 
+    @GetMapping("/role/{userRole}")
+    public List<User> findByRole(@PathVariable String userRole)
+    {
+        return userRepository.findUsersByRole(userRole);
+    }
+    
     @GetMapping("/username/{username}")
     public List<User> findByName(@PathVariable String username)
     {

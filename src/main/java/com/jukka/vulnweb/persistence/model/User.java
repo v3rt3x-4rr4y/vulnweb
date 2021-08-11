@@ -2,11 +2,23 @@ package com.jukka.vulnweb.persistence.model;
 
 import java.util.Random;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityResult;
+import javax.persistence.FieldResult;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SqlResultSetMapping;
+
+@SqlResultSetMapping(
+        name = "UserMapping",
+        entities = @EntityResult(
+                entityClass = User.class,
+                fields = {
+                    @FieldResult(name = "id", column = "id"),
+                    @FieldResult(name = "username", column = "username"),
+                    @FieldResult(name = "role", column = "role"),
+                    @FieldResult(name = "password", column = "password")}))
 
 @Entity
 public class User
